@@ -55,6 +55,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.75;
@@ -258,11 +259,20 @@ select:-webkit-autofill:focus {
 .hero-text:not(:last-child){
   margin-bottom: 34px;
 }
-
+.hero-img-wrapper{
+  position: relative;
+}
 .hero-img {
+  display: block;
   width: 710px;
   height: 596px;
   object-fit: cover;
+}
+.hero-badge{
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
 }
 
 .index-hero-img {
@@ -274,6 +284,7 @@ select:-webkit-autofill:focus {
   margin-bottom: 20px;
 }
 .index-collection-inner {
+  position: relative;
   padding: 50px 143px;
   background-color: var(--light-bg);
   background-image: url(../img/index-collection-bg.jpg);
@@ -338,6 +349,27 @@ select:-webkit-autofill:focus {
 .index-collection-item:nth-child(even) .index-collection-info {
   padding-right: 117px; juft uchun
 } */
+.inner-collection-leaves-left{
+  position: absolute;
+  top: 40px;
+  left: -150px;
+
+}
+.inner-collection-leaves-right{
+  position: absolute;
+  top: 685px;
+  right: -350px;
+
+}
+.inner-collection-leaves-left-light{
+  position: absolute;
+  left: -216px;
+  bottom: 170px;
+
+}
+
+
+
 
 /* index-feautres */
 .index-features{
@@ -366,7 +398,7 @@ select:-webkit-autofill:focus {
   margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;  
+  text-align: center;
   color: #fff;
 
 }
@@ -439,6 +471,7 @@ select:-webkit-autofill:focus {
 }
 
 .how-it-works-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: calc(100% / 3 - 20px);
@@ -446,11 +479,23 @@ select:-webkit-autofill:focus {
   counter-increment: how-it-works;
 }
 .how-it-works-item::before{
+  position: relative;
+  z-index: 2;
   width: 60px;
   height: 60px;
   border: 4px solid var(--accent-color-light-brown);
   margin-bottom: 20px;
   background-color: var(--light-bg);
+  content: "";
+}
+.how-it-works-item:not(:last-child):after{
+  position: absolute;
+  left: 35px;
+  top: 30px;
+  width: 433px;
+  height: 3px;
+  background-image: url(../img/dashed-stroke\ .svg);
+  background-repeat: no-repeat;
   content: "";
 }
 .how-it-works-info {
@@ -485,6 +530,11 @@ select:-webkit-autofill:focus {
 .how-it-works-cta:focus{
   outline-color: var(--accent-color-light-brown);
 }
+.how-it-works-sticker{
+  position: absolute;
+  top: 41px;
+  right: 68px;
+}
 /* site footer */
 .site-footer {
   padding-top: 65px;
@@ -518,18 +568,6 @@ select:-webkit-autofill:focus {
   height: 24px;
   object-fit: contain;
 }
-
-.sitenav {}
-
-.sitenav-medium-font {}
-
-.sitenav-list {}
-
-.sitenav-item {}
-
-.sitenav-link {}
-
-.site-footer-socials {}
 
 .socials {
   display: flex;
